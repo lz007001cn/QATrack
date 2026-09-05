@@ -1,0 +1,20 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Java / Maven
+target/
+out/
+*.class
+
+# Logs
+*.log
+logs/
+
+# Local configuration / secrets
+.env
+*.local.properties
+
+# OS generated files
+.DS_Store
+Thumbs.db
