@@ -1,0 +1,40 @@
+{
+  "version": "QATrack V1 Domain Model Freeze v1.0",
+  "mysql": "8.0.46",
+  "database": "qatrack_v1_verify_freeze10",
+  "endpoint": "127.0.0.1:13306",
+  "validation_instance_stopped": true,
+  "existing_MySQL80_service": "Running; unchanged",
+  "tables": 19,
+  "columns": 154,
+  "primary_keys": 19,
+  "foreign_keys": 40,
+  "unique_constraints": 13,
+  "enforced_checks": 51,
+  "ordinary_indexes": 24,
+  "secondary_indexes": 37,
+  "total_indexes": 56,
+  "seed_rows": 680,
+  "constraint_tests": {
+    "total": 178,
+    "passed": 178,
+    "failed": 0
+  },
+  "fixture_invariant_checks": {
+    "total": 22,
+    "violations": 0
+  },
+  "schema_from_empty": "PASS",
+  "seed": "PASS",
+  "core_query_groups": 10,
+  "explain_analyze_queries": 2,
+  "sha256": {
+    "schema.sql": "37D844DF2023E9E923DC42CBDC91A06A95D9FF508533B6AC332937B018C6870D",
+    "seed.sql": "7A4DCE0368DB54076B0064818C8BDA83D5D38323100C403E00DA84A855EFD4A0",
+    "constraint-tests.sql": "89A1DC0F7885464B3A82C887898FC7F2752C9F957F8357973AF34660DBBBE036",
+    "queries.sql": "25D572B0D3C4AC517DEF1B070F4509E8FA36AA62AF45E2F821503737D51CA800",
+    "service-invariants.sql": "5A3C40147E5FF1BC834F886CF8133D755AA2BE078ACC58BB625108613E12F4EA",
+    "inspect.sql": "9B2A96A38689058DA9CC9893EC7B56109FA0F6C80025EEB2598C8CD7DB495C7D",
+    "verify.ps1": "38AF134FFDBC7F29D1D41A5DEED8A7F888EC8541D7E25ED07F852AB4E32565BC"
+  }
+}

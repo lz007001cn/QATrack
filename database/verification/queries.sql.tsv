@@ -1,0 +1,35 @@
+active_requirements	covered_requirements
+3	1
+id	key_no	title
+103	3	CSV export
+id	key_no	title
+102	2	Access permissions
+103	3	CSV export
+run_case_id	test_case_id	snapshot_title	attempt_no	current_outcome
+101	101	Valid account signs in	2	PASS
+102	102	Invalid password is rejected	1	PASS
+103	103	Restricted page denies access	NULL	NOT_RUN
+n	p	f	b	s	not_run	actually_executed	pass_rate	execution_rate	recorded_rate
+3	2	0	0	0	1	2	100.00	66.67	66.67
+requirement_no	case_no	run_id	attempt_no	status	defect_no	defect_status	link_status
+1	1	101	1	FAIL	1	OPEN	CONFIRMED
+2	1	101	1	FAIL	1	OPEN	NEEDS_REVIEW
+id	test_plan_id	name	status	created_at
+103	NULL	CI skipped suite	COMPLETED	2026-09-06 08:00:00.000000
+102	NULL	Ad-hoc permission check	IN_PROGRESS	2026-09-06 08:00:00.000000
+101	101	Regression build 1	IN_PROGRESS	2026-09-06 08:00:00.000000
+id	key_no	title	status
+101	1	Valid sign-in does not establish a session	OPEN
+id	status	source	namespace	external_key
+101	ACTIVE	JUNIT	web	v1|12:qa.LoginTest|16:test_valid_login
+103	ACTIVE	JUNIT	firefox	v1|12:qa.LoginTest|16:test_valid_login
+id	attempt_no	status	executed_by	import_id	automation_mapping_id	comment
+101	1	FAIL	NULL	101	101	NULL
+102	2	PASS	2	NULL	NULL	Manual retest after session configuration repair
+EXPLAIN
+-> Index lookup on test_runs using ix_runs_project_created_id (project_id=1) (reverse)  (cost=1.05 rows=3) (actual time=0.0087..0.0098 rows=3 loops=1)
+
+EXPLAIN
+-> Limit: 1 row(s)  (cost=0.7 rows=1) (actual time=0.0074..0.0075 rows=1 loops=1)
+    -> Index lookup on test_attempts using uq_attempts_run_case_no (test_run_case_id=101) (reverse)  (cost=0.7 rows=2) (actual time=0.0072..0.0072 rows=1 loops=1)
+

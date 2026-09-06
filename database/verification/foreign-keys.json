@@ -1,0 +1,362 @@
+[
+  {
+    "name": "fk_defects_assignee_id",
+    "table": "defects",
+    "column": "assignee_id",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_defects_project_id",
+    "table": "defects",
+    "column": "project_id",
+    "delete": "RESTRICT",
+    "parent": "projects",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_defects_reporter_id",
+    "table": "defects",
+    "column": "reporter_id",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_project_counters_project_id",
+    "table": "project_counters",
+    "column": "project_id",
+    "delete": "RESTRICT",
+    "parent": "projects",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_project_members_project_id",
+    "table": "project_members",
+    "column": "project_id",
+    "delete": "RESTRICT",
+    "parent": "projects",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_project_members_user_id",
+    "table": "project_members",
+    "column": "user_id",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_projects_created_by",
+    "table": "projects",
+    "column": "created_by",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_requirements_created_by",
+    "table": "requirements",
+    "column": "created_by",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_requirements_project_id",
+    "table": "requirements",
+    "column": "project_id",
+    "delete": "RESTRICT",
+    "parent": "projects",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_attempt_defects_attempt_id",
+    "table": "test_attempt_defects",
+    "column": "attempt_id",
+    "delete": "RESTRICT",
+    "parent": "test_attempts",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_attempt_defects_defect_id",
+    "table": "test_attempt_defects",
+    "column": "defect_id",
+    "delete": "RESTRICT",
+    "parent": "defects",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_attempt_defects_linked_by",
+    "table": "test_attempt_defects",
+    "column": "linked_by",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_attempts_automation_mapping_id",
+    "table": "test_attempts",
+    "column": "automation_mapping_id",
+    "delete": "RESTRICT",
+    "parent": "test_automation_mappings",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_attempts_executed_by",
+    "table": "test_attempts",
+    "column": "executed_by",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_attempts_import_id",
+    "table": "test_attempts",
+    "column": "import_id",
+    "delete": "RESTRICT",
+    "parent": "test_imports",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_attempts_test_run_case_id",
+    "table": "test_attempts",
+    "column": "test_run_case_id",
+    "delete": "RESTRICT",
+    "parent": "test_run_cases",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_automation_identities_project_id",
+    "table": "test_automation_identities",
+    "column": "project_id",
+    "delete": "RESTRICT",
+    "parent": "projects",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_automation_mappings_automation_identity_id",
+    "table": "test_automation_mappings",
+    "column": "automation_identity_id",
+    "delete": "RESTRICT",
+    "parent": "test_automation_identities",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_automation_mappings_created_by",
+    "table": "test_automation_mappings",
+    "column": "created_by",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_automation_mappings_test_case_id",
+    "table": "test_automation_mappings",
+    "column": "test_case_id",
+    "delete": "RESTRICT",
+    "parent": "test_cases",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_case_requirements_linked_by",
+    "table": "test_case_requirements",
+    "column": "linked_by",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_case_requirements_requirement_id",
+    "table": "test_case_requirements",
+    "column": "requirement_id",
+    "delete": "RESTRICT",
+    "parent": "requirements",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_case_requirements_reviewed_by",
+    "table": "test_case_requirements",
+    "column": "reviewed_by",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_case_requirements_test_case_id",
+    "table": "test_case_requirements",
+    "column": "test_case_id",
+    "delete": "RESTRICT",
+    "parent": "test_cases",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_cases_created_by",
+    "table": "test_cases",
+    "column": "created_by",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_cases_project_id",
+    "table": "test_cases",
+    "column": "project_id",
+    "delete": "RESTRICT",
+    "parent": "projects",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_imports_imported_by",
+    "table": "test_imports",
+    "column": "imported_by",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_imports_test_run_id",
+    "table": "test_imports",
+    "column": "test_run_id",
+    "delete": "RESTRICT",
+    "parent": "test_runs",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_plan_cases_added_by",
+    "table": "test_plan_cases",
+    "column": "added_by",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_plan_cases_test_case_id",
+    "table": "test_plan_cases",
+    "column": "test_case_id",
+    "delete": "RESTRICT",
+    "parent": "test_cases",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_plan_cases_test_plan_id",
+    "table": "test_plan_cases",
+    "column": "test_plan_id",
+    "delete": "RESTRICT",
+    "parent": "test_plans",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_plans_created_by",
+    "table": "test_plans",
+    "column": "created_by",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_plans_project_id",
+    "table": "test_plans",
+    "column": "project_id",
+    "delete": "RESTRICT",
+    "parent": "projects",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_run_case_steps_test_run_case_id",
+    "table": "test_run_case_steps",
+    "column": "test_run_case_id",
+    "delete": "RESTRICT",
+    "parent": "test_run_cases",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_run_cases_test_case_id",
+    "table": "test_run_cases",
+    "column": "test_case_id",
+    "delete": "RESTRICT",
+    "parent": "test_cases",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_run_cases_test_run_id",
+    "table": "test_run_cases",
+    "column": "test_run_id",
+    "delete": "RESTRICT",
+    "parent": "test_runs",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_runs_created_by",
+    "table": "test_runs",
+    "column": "created_by",
+    "delete": "RESTRICT",
+    "parent": "users",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_runs_project_id",
+    "table": "test_runs",
+    "column": "project_id",
+    "delete": "RESTRICT",
+    "parent": "projects",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_runs_test_plan_id",
+    "table": "test_runs",
+    "column": "test_plan_id",
+    "delete": "RESTRICT",
+    "parent": "test_plans",
+    "target": "id",
+    "update": "RESTRICT"
+  },
+  {
+    "name": "fk_test_steps_test_case_id",
+    "table": "test_steps",
+    "column": "test_case_id",
+    "delete": "RESTRICT",
+    "parent": "test_cases",
+    "target": "id",
+    "update": "RESTRICT"
+  }
+]

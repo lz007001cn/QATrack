@@ -1,0 +1,63 @@
+# QATrack V1 数据库
+
+冻结版本：[Freeze v1.0](../docs/DOMAIN-FREEZE-v1.0.md)，目标 MySQL 8.0.46，19 表、154 字段。
+见 [完整设计](../docs/DATABASE-DESIGN-DRAFT.md) 和 [实测报告](../docs/DATABASE-VALIDATION-v1.0.md)。
+
+## 执行文件
+
+| 文件 | 作用 |
+| --- | --- |
+| schema.sql | 空库建表及约束；不含建库/删库或 IF NOT EXISTS |
+| seed.sql | 空表种子，单事务 680 行，每表至少 10 行；重复执行应报冲突 |
+| constraint-tests.sql | 验证库专用，178 项测试；修改逐项回滚，三个测试过程成功后删除 |
+| queries.sql | 10 组核心查询与 2 条 EXPLAIN ANALYZE |
+| service-invariants.sql | 22 项只读业务一致性检查；不安装触发器 |
+| inspect.sql | 真实对象、索引、引用动作、CHECK 状态及行数 |
+| verify.ps1 | PowerShell 7 验证入口；只创建新的 qatrack_v1_verify_* 数据库 |
+| verification/ | 本轮实测证据，不是 MySQL 数据目录 |
+
+## 从空库复现
+
+准备 MySQL 8.0.46 客户端/服务器和有建库、建表、创建测试例程权限的验证账户。
+脚本拒绝已存在的库，不删除或覆盖数据；更换新库名重跑。DDL 有隐式提交，失败时保留现场，不能承诺整份 schema 事务回滚。
+不要把测试运行到业务数据库，不加 --force、不禁用 FK/CHECK、不以 IGNORE/upsert 掩盖失败。
+
+下面在仓库根目录执行，使用自己的路径/端口/账户。配置 mysql_config_editor 登录路径后可传 LoginPath，不把密码写入仓库或命令参数。
+
+```powershell
+.\database\verify.ps1 `
+  -MySql 'C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe' `
+  -Server 127.0.0.1 -Port 3306 -User qatrack_validator `
+  -LoginPath qatrack-local -Database qatrack_v1_verify_demo01
+```
+
+本轮实际使用独立实例 127.0.0.1:13306、新库 qatrack_v1_verify_freeze10，未改原 MySQL80 服务。
+验证数据目录位于 E 盘，实例收尾正常关闭；复现时使用明确且正在运行的目标实例。
+
+## 手动执行
+
+在仓库根目录启动 MySQL 客户端，显式创建并选择新库，再依次 SOURCE：
+
+```sql
+CREATE DATABASE qatrack_v1_verify_manual01 CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE qatrack_v1_verify_manual01;
+SOURCE database/schema.sql;
+SOURCE database/seed.sql;
+SOURCE database/constraint-tests.sql;
+SOURCE database/queries.sql;
+SOURCE database/service-invariants.sql;
+SOURCE database/inspect.sql;
+```
+
+seed 不是重复同步脚本。约束测试失败时客户端停止，修正后换新库重跑，避免残留 qt_* 过程造成误判。
+测试中跨项目错误关联“预期接受”意味着暴露 Service invariant；所有修改随后回滚。
+密码哈希的随机输入已丢弃，没有可直接登录的公开种子口令；后续登录测试另行配置。
+
+## 模型约定
+
+- Run 自身 project_id NOT NULL/FK，test_plan_id 可空；不再创建 test_run_projects。
+- 19 PK + 13 UNIQUE + 24 普通索引 = 56 总索引；非 PK 共 37。
+- 40 FK 均 DELETE/UPDATE RESTRICT，51 CHECK 全部强制执行。
+- 行内来源/复核组合由 CHECK 保证；跨项目、权限、历史不可变和父状态等由 Service 保证。
+- 会话 UTC、严格 SQL 模式；比率 SQL NULL 在页面显示 N/A。
+- 尚无 Java/Servlet/DAO/Service/前端实现，SQL 验证不代表业务功能已完成。

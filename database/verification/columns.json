@@ -1,0 +1,1388 @@
+[
+  {
+    "type": "bigint",
+    "extra": "auto_increment",
+    "table": "defects",
+    "column": "id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "defects",
+    "column": "project_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "defects",
+    "column": "key_no",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(240)",
+    "extra": "",
+    "table": "defects",
+    "column": "title",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "defects",
+    "column": "description",
+    "default": null,
+    "nullable": "YES",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "defects",
+    "column": "severity",
+    "default": "MEDIUM",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "defects",
+    "column": "priority",
+    "default": "MEDIUM",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "defects",
+    "column": "status",
+    "default": "OPEN",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "defects",
+    "column": "reporter_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "defects",
+    "column": "assignee_id",
+    "default": null,
+    "nullable": "YES",
+    "collation": null
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "defects",
+    "column": "resolution_note",
+    "default": null,
+    "nullable": "YES",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "defects",
+    "column": "created_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "defects",
+    "column": "updated_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "int unsigned",
+    "extra": "",
+    "table": "defects",
+    "column": "lock_version",
+    "default": "0",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "project_counters",
+    "column": "project_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "project_counters",
+    "column": "entity_type",
+    "default": null,
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "project_counters",
+    "column": "next_value",
+    "default": "1",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "project_members",
+    "column": "project_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "project_members",
+    "column": "user_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "project_members",
+    "column": "project_role",
+    "default": null,
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "project_members",
+    "column": "status",
+    "default": "ACTIVE",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "project_members",
+    "column": "joined_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "project_members",
+    "column": "updated_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "int unsigned",
+    "extra": "",
+    "table": "project_members",
+    "column": "lock_version",
+    "default": "0",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "auto_increment",
+    "table": "projects",
+    "column": "id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "projects",
+    "column": "project_key",
+    "default": null,
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "varchar(160)",
+    "extra": "",
+    "table": "projects",
+    "column": "name",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "projects",
+    "column": "description",
+    "default": null,
+    "nullable": "YES",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "projects",
+    "column": "status",
+    "default": "ACTIVE",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "projects",
+    "column": "created_by",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "projects",
+    "column": "created_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "projects",
+    "column": "updated_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "int unsigned",
+    "extra": "",
+    "table": "projects",
+    "column": "lock_version",
+    "default": "0",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "auto_increment",
+    "table": "requirements",
+    "column": "id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "requirements",
+    "column": "project_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "requirements",
+    "column": "key_no",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(240)",
+    "extra": "",
+    "table": "requirements",
+    "column": "title",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "requirements",
+    "column": "description",
+    "default": null,
+    "nullable": "YES",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "requirements",
+    "column": "priority",
+    "default": "MEDIUM",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "requirements",
+    "column": "status",
+    "default": "DRAFT",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "requirements",
+    "column": "created_by",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "requirements",
+    "column": "created_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "requirements",
+    "column": "updated_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "int unsigned",
+    "extra": "",
+    "table": "requirements",
+    "column": "lock_version",
+    "default": "0",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_attempt_defects",
+    "column": "attempt_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_attempt_defects",
+    "column": "defect_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_attempt_defects",
+    "column": "linked_by",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_attempt_defects",
+    "column": "linked_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "auto_increment",
+    "table": "test_attempts",
+    "column": "id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_attempts",
+    "column": "test_run_case_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "int unsigned",
+    "extra": "",
+    "table": "test_attempts",
+    "column": "attempt_no",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "test_attempts",
+    "column": "status",
+    "default": null,
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_attempts",
+    "column": "executed_by",
+    "default": null,
+    "nullable": "YES",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_attempts",
+    "column": "import_id",
+    "default": null,
+    "nullable": "YES",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_attempts",
+    "column": "automation_mapping_id",
+    "default": null,
+    "nullable": "YES",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "",
+    "table": "test_attempts",
+    "column": "executed_at",
+    "default": null,
+    "nullable": "YES",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_attempts",
+    "column": "recorded_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint unsigned",
+    "extra": "",
+    "table": "test_attempts",
+    "column": "duration_ms",
+    "default": null,
+    "nullable": "YES",
+    "collation": null
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "test_attempts",
+    "column": "comment",
+    "default": null,
+    "nullable": "YES",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "test_attempts",
+    "column": "failure_message",
+    "default": null,
+    "nullable": "YES",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "binary(16)",
+    "extra": "",
+    "table": "test_attempts",
+    "column": "submission_key",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "auto_increment",
+    "table": "test_automation_identities",
+    "column": "id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_automation_identities",
+    "column": "project_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "test_automation_identities",
+    "column": "source",
+    "default": "JUNIT",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "varchar(128)",
+    "extra": "",
+    "table": "test_automation_identities",
+    "column": "namespace",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_bin"
+  },
+  {
+    "type": "varchar(512)",
+    "extra": "",
+    "table": "test_automation_identities",
+    "column": "external_key",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_bin"
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_automation_identities",
+    "column": "created_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "auto_increment",
+    "table": "test_automation_mappings",
+    "column": "id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_automation_mappings",
+    "column": "automation_identity_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_automation_mappings",
+    "column": "test_case_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "test_automation_mappings",
+    "column": "status",
+    "default": "ACTIVE",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_automation_mappings",
+    "column": "created_by",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_automation_mappings",
+    "column": "created_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_automation_mappings",
+    "column": "updated_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "int unsigned",
+    "extra": "",
+    "table": "test_automation_mappings",
+    "column": "lock_version",
+    "default": "0",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_case_requirements",
+    "column": "requirement_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_case_requirements",
+    "column": "test_case_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "test_case_requirements",
+    "column": "status",
+    "default": "NEEDS_REVIEW",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_case_requirements",
+    "column": "linked_by",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_case_requirements",
+    "column": "linked_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_case_requirements",
+    "column": "reviewed_by",
+    "default": null,
+    "nullable": "YES",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "",
+    "table": "test_case_requirements",
+    "column": "reviewed_at",
+    "default": null,
+    "nullable": "YES",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_case_requirements",
+    "column": "updated_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "auto_increment",
+    "table": "test_cases",
+    "column": "id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_cases",
+    "column": "project_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_cases",
+    "column": "key_no",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(240)",
+    "extra": "",
+    "table": "test_cases",
+    "column": "title",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "test_cases",
+    "column": "description",
+    "default": null,
+    "nullable": "YES",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "test_cases",
+    "column": "preconditions",
+    "default": null,
+    "nullable": "YES",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "test_cases",
+    "column": "priority",
+    "default": "MEDIUM",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "test_cases",
+    "column": "status",
+    "default": "DRAFT",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_cases",
+    "column": "created_by",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_cases",
+    "column": "created_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_cases",
+    "column": "updated_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "int unsigned",
+    "extra": "",
+    "table": "test_cases",
+    "column": "lock_version",
+    "default": "0",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "auto_increment",
+    "table": "test_imports",
+    "column": "id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_imports",
+    "column": "test_run_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "binary(16)",
+    "extra": "",
+    "table": "test_imports",
+    "column": "request_key",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "binary(32)",
+    "extra": "",
+    "table": "test_imports",
+    "column": "report_sha256",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(128)",
+    "extra": "",
+    "table": "test_imports",
+    "column": "source_namespace",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_bin"
+  },
+  {
+    "type": "varchar(255)",
+    "extra": "",
+    "table": "test_imports",
+    "column": "original_filename",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_imports",
+    "column": "imported_by",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_imports",
+    "column": "imported_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_plan_cases",
+    "column": "test_plan_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_plan_cases",
+    "column": "test_case_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_plan_cases",
+    "column": "added_by",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_plan_cases",
+    "column": "added_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "auto_increment",
+    "table": "test_plans",
+    "column": "id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_plans",
+    "column": "project_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_plans",
+    "column": "key_no",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(160)",
+    "extra": "",
+    "table": "test_plans",
+    "column": "name",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "test_plans",
+    "column": "description",
+    "default": null,
+    "nullable": "YES",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "test_plans",
+    "column": "status",
+    "default": "DRAFT",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_plans",
+    "column": "created_by",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_plans",
+    "column": "created_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_plans",
+    "column": "updated_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "int unsigned",
+    "extra": "",
+    "table": "test_plans",
+    "column": "lock_version",
+    "default": "0",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_run_case_steps",
+    "column": "test_run_case_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "smallint unsigned",
+    "extra": "",
+    "table": "test_run_case_steps",
+    "column": "step_order",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "test_run_case_steps",
+    "column": "action",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "test_run_case_steps",
+    "column": "expected_result",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "bigint",
+    "extra": "auto_increment",
+    "table": "test_run_cases",
+    "column": "id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_run_cases",
+    "column": "test_run_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_run_cases",
+    "column": "test_case_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(240)",
+    "extra": "",
+    "table": "test_run_cases",
+    "column": "snapshot_title",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "test_run_cases",
+    "column": "snapshot_description",
+    "default": null,
+    "nullable": "YES",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "test_run_cases",
+    "column": "snapshot_preconditions",
+    "default": null,
+    "nullable": "YES",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "test_run_cases",
+    "column": "snapshot_priority",
+    "default": null,
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_run_cases",
+    "column": "captured_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "auto_increment",
+    "table": "test_runs",
+    "column": "id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_runs",
+    "column": "project_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_runs",
+    "column": "test_plan_id",
+    "default": null,
+    "nullable": "YES",
+    "collation": null
+  },
+  {
+    "type": "varchar(160)",
+    "extra": "",
+    "table": "test_runs",
+    "column": "name",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "varchar(160)",
+    "extra": "",
+    "table": "test_runs",
+    "column": "environment",
+    "default": null,
+    "nullable": "YES",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "varchar(80)",
+    "extra": "",
+    "table": "test_runs",
+    "column": "build_version",
+    "default": null,
+    "nullable": "YES",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "test_runs",
+    "column": "status",
+    "default": "IN_PROGRESS",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "",
+    "table": "test_runs",
+    "column": "ended_at",
+    "default": null,
+    "nullable": "YES",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_runs",
+    "column": "created_by",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_runs",
+    "column": "created_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "test_runs",
+    "column": "updated_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "int unsigned",
+    "extra": "",
+    "table": "test_runs",
+    "column": "lock_version",
+    "default": "0",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "bigint",
+    "extra": "",
+    "table": "test_steps",
+    "column": "test_case_id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "smallint unsigned",
+    "extra": "",
+    "table": "test_steps",
+    "column": "step_order",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "test_steps",
+    "column": "action",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "text",
+    "extra": "",
+    "table": "test_steps",
+    "column": "expected_result",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "bigint",
+    "extra": "auto_increment",
+    "table": "users",
+    "column": "id",
+    "default": null,
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "varchar(64)",
+    "extra": "",
+    "table": "users",
+    "column": "username",
+    "default": null,
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "varchar(80)",
+    "extra": "",
+    "table": "users",
+    "column": "display_name",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "varchar(255)",
+    "extra": "",
+    "table": "users",
+    "column": "password_hash",
+    "default": null,
+    "nullable": "NO",
+    "collation": "utf8mb4_0900_ai_ci"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "users",
+    "column": "system_role",
+    "default": "USER",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "varchar(16)",
+    "extra": "",
+    "table": "users",
+    "column": "status",
+    "default": "ACTIVE",
+    "nullable": "NO",
+    "collation": "ascii_bin"
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "users",
+    "column": "created_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "datetime(6)",
+    "extra": "DEFAULT_GENERATED",
+    "table": "users",
+    "column": "updated_at",
+    "default": "CURRENT_TIMESTAMP(6)",
+    "nullable": "NO",
+    "collation": null
+  },
+  {
+    "type": "int unsigned",
+    "extra": "",
+    "table": "users",
+    "column": "lock_version",
+    "default": "0",
+    "nullable": "NO",
+    "collation": null
+  }
+]

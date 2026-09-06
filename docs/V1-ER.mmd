@@ -1,0 +1,44 @@
+erDiagram
+    %% QATrack V1 Domain Model Freeze v1.0: 19 tables / 40 FK.
+    %% Labels are child FK columns. All actions are RESTRICT / RESTRICT.
+    %% Mandatory child minima remain Service invariants.
+    users ||..o{ projects : created_by
+    projects ||--o{ project_members : project_id
+    users ||--o{ project_members : user_id
+    projects ||--|{ project_counters : project_id
+    projects ||..o{ requirements : project_id
+    users ||..o{ requirements : created_by
+    projects ||..o{ test_cases : project_id
+    users ||..o{ test_cases : created_by
+    projects ||..o{ test_automation_identities : project_id
+    test_automation_identities ||..o| test_automation_mappings : automation_identity_id
+    test_cases ||..o{ test_automation_mappings : test_case_id
+    users ||..o{ test_automation_mappings : created_by
+    test_cases ||--o{ test_steps : test_case_id
+    requirements ||--o{ test_case_requirements : requirement_id
+    test_cases ||--o{ test_case_requirements : test_case_id
+    users ||..o{ test_case_requirements : linked_by
+    users o|..o{ test_case_requirements : reviewed_by
+    projects ||..o{ test_plans : project_id
+    users ||..o{ test_plans : created_by
+    test_plans ||--o{ test_plan_cases : test_plan_id
+    test_cases ||--o{ test_plan_cases : test_case_id
+    users ||..o{ test_plan_cases : added_by
+    projects ||..o{ test_runs : project_id
+    test_plans o|..o{ test_runs : test_plan_id
+    users ||..o{ test_runs : created_by
+    test_runs ||..|{ test_run_cases : test_run_id
+    test_cases ||..o{ test_run_cases : test_case_id
+    test_run_cases ||--|{ test_run_case_steps : test_run_case_id
+    test_runs ||..o{ test_imports : test_run_id
+    users ||..o{ test_imports : imported_by
+    test_run_cases ||..o{ test_attempts : test_run_case_id
+    users o|..o{ test_attempts : executed_by
+    test_imports o|..|{ test_attempts : import_id
+    test_automation_mappings o|..o{ test_attempts : automation_mapping_id
+    projects ||..o{ defects : project_id
+    users ||..o{ defects : reporter_id
+    users o|..o{ defects : assignee_id
+    test_attempts ||--o{ test_attempt_defects : attempt_id
+    defects ||--o{ test_attempt_defects : defect_id
+    users ||..o{ test_attempt_defects : linked_by

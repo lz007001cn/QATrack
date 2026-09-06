@@ -1,0 +1,181 @@
+test_no	test_name	expected_errno	actual_errno	outcome	detail
+1	CHECK ck_users_username_nonblank	3819	3819	PASS	Check constraint 'ck_users_username_nonblank' is violated.
+2	CHECK ck_users_display_name_nonblank	3819	3819	PASS	Check constraint 'ck_users_display_name_nonblank' is violated.
+3	CHECK ck_users_password_hash_nonblank	3819	3819	PASS	Check constraint 'ck_users_password_hash_nonblank' is violated.
+4	CHECK ck_users_system_role	3819	3819	PASS	Check constraint 'ck_users_system_role' is violated.
+5	CHECK ck_users_status	3819	3819	PASS	Check constraint 'ck_users_status' is violated.
+6	FK projects.created_by	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`projects`, CONSTRAINT `fk_projects_created_by` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+7	CHECK ck_projects_name_nonblank	3819	3819	PASS	Check constraint 'ck_projects_name_nonblank' is violated.
+8	CHECK ck_projects_status	3819	3819	PASS	Check constraint 'ck_projects_status' is violated.
+9	FK project_members.project_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`project_members`, CONSTRAINT `fk_project_members_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+10	FK project_members.user_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`project_members`, CONSTRAINT `fk_project_members_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+11	CHECK ck_project_members_project_role	3819	3819	PASS	Check constraint 'ck_project_members_project_role' is violated.
+12	CHECK ck_project_members_status	3819	3819	PASS	Check constraint 'ck_project_members_status' is violated.
+13	FK project_counters.project_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`project_counters`, CONSTRAINT `fk_project_counters_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+14	CHECK ck_project_counters_entity_type	3819	3819	PASS	Check constraint 'ck_project_counters_entity_type' is violated.
+15	CHECK ck_project_counters_next_value	3819	3819	PASS	Check constraint 'ck_project_counters_next_value' is violated.
+16	FK requirements.project_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`requirements`, CONSTRAINT `fk_requirements_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+17	FK requirements.created_by	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`requirements`, CONSTRAINT `fk_requirements_created_by` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+18	CHECK ck_requirements_key_no	3819	3819	PASS	Check constraint 'ck_requirements_key_no' is violated.
+19	CHECK ck_requirements_title_nonblank	3819	3819	PASS	Check constraint 'ck_requirements_title_nonblank' is violated.
+20	CHECK ck_requirements_priority	3819	3819	PASS	Check constraint 'ck_requirements_priority' is violated.
+21	CHECK ck_requirements_status	3819	3819	PASS	Check constraint 'ck_requirements_status' is violated.
+22	FK test_cases.project_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_cases`, CONSTRAINT `fk_test_cases_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+23	FK test_cases.created_by	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_cases`, CONSTRAINT `fk_test_cases_created_by` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+24	CHECK ck_test_cases_key_no	3819	3819	PASS	Check constraint 'ck_test_cases_key_no' is violated.
+25	CHECK ck_test_cases_title_nonblank	3819	3819	PASS	Check constraint 'ck_test_cases_title_nonblank' is violated.
+26	CHECK ck_test_cases_priority	3819	3819	PASS	Check constraint 'ck_test_cases_priority' is violated.
+27	CHECK ck_test_cases_status	3819	3819	PASS	Check constraint 'ck_test_cases_status' is violated.
+28	FK test_automation_identities.project_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_automation_identities`, CONSTRAINT `fk_test_automation_identities_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE RESTRICT ON U)
+29	CHECK ck_test_automation_identities_source	3819	3819	PASS	Check constraint 'ck_test_automation_identities_source' is violated.
+30	CHECK ck_test_automation_identities_namespace_nonblank	3819	3819	PASS	Check constraint 'ck_test_automation_identities_namespace_nonblank' is violated.
+31	CHECK ck_automation_external_key_nonempty	3819	3819	PASS	Check constraint 'ck_automation_external_key_nonempty' is violated.
+32	FK test_automation_mappings.automation_identity_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_automation_mappings`, CONSTRAINT `fk_test_automation_mappings_automation_identity_id` FOREIGN KEY (`automation_identity_id`) REFERENCES `test_automation_iden)
+33	FK test_automation_mappings.test_case_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_automation_mappings`, CONSTRAINT `fk_test_automation_mappings_test_case_id` FOREIGN KEY (`test_case_id`) REFERENCES `test_cases` (`id`) ON DELETE RESTRICT ON)
+34	FK test_automation_mappings.created_by	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_automation_mappings`, CONSTRAINT `fk_test_automation_mappings_created_by` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE R)
+35	CHECK ck_test_automation_mappings_status	3819	3819	PASS	Check constraint 'ck_test_automation_mappings_status' is violated.
+36	FK test_steps.test_case_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_steps`, CONSTRAINT `fk_test_steps_test_case_id` FOREIGN KEY (`test_case_id`) REFERENCES `test_cases` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+37	CHECK ck_test_steps_step_order	3819	3819	PASS	Check constraint 'ck_test_steps_step_order' is violated.
+38	CHECK ck_test_steps_action_nonblank	3819	3819	PASS	Check constraint 'ck_test_steps_action_nonblank' is violated.
+39	CHECK ck_test_steps_expected_result_nonblank	3819	3819	PASS	Check constraint 'ck_test_steps_expected_result_nonblank' is violated.
+40	FK test_case_requirements.requirement_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_case_requirements`, CONSTRAINT `fk_test_case_requirements_requirement_id` FOREIGN KEY (`requirement_id`) REFERENCES `requirements` (`id`) ON DELETE RESTRICT )
+41	FK test_case_requirements.test_case_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_case_requirements`, CONSTRAINT `fk_test_case_requirements_test_case_id` FOREIGN KEY (`test_case_id`) REFERENCES `test_cases` (`id`) ON DELETE RESTRICT ON UPD)
+42	FK test_case_requirements.linked_by	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_case_requirements`, CONSTRAINT `fk_test_case_requirements_linked_by` FOREIGN KEY (`linked_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRIC)
+43	FK test_case_requirements.reviewed_by	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_case_requirements`, CONSTRAINT `fk_test_case_requirements_reviewed_by` FOREIGN KEY (`reviewed_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RES)
+44	CHECK ck_test_case_requirements_status	3819	3819	PASS	Check constraint 'ck_test_case_requirements_status' is violated.
+45	CHECK ck_trace_review_shape	3819	3819	PASS	Check constraint 'ck_trace_review_shape' is violated.
+46	FK test_plans.project_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_plans`, CONSTRAINT `fk_test_plans_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+47	FK test_plans.created_by	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_plans`, CONSTRAINT `fk_test_plans_created_by` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+48	CHECK ck_test_plans_key_no	3819	3819	PASS	Check constraint 'ck_test_plans_key_no' is violated.
+49	CHECK ck_test_plans_name_nonblank	3819	3819	PASS	Check constraint 'ck_test_plans_name_nonblank' is violated.
+50	CHECK ck_test_plans_status	3819	3819	PASS	Check constraint 'ck_test_plans_status' is violated.
+51	FK test_plan_cases.test_plan_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_plan_cases`, CONSTRAINT `fk_test_plan_cases_test_plan_id` FOREIGN KEY (`test_plan_id`) REFERENCES `test_plans` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+52	FK test_plan_cases.test_case_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_plan_cases`, CONSTRAINT `fk_test_plan_cases_test_case_id` FOREIGN KEY (`test_case_id`) REFERENCES `test_cases` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+53	FK test_plan_cases.added_by	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_plan_cases`, CONSTRAINT `fk_test_plan_cases_added_by` FOREIGN KEY (`added_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+54	FK test_runs.project_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_runs`, CONSTRAINT `fk_test_runs_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+55	FK test_runs.test_plan_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_runs`, CONSTRAINT `fk_test_runs_test_plan_id` FOREIGN KEY (`test_plan_id`) REFERENCES `test_plans` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+56	FK test_runs.created_by	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_runs`, CONSTRAINT `fk_test_runs_created_by` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+57	CHECK ck_test_runs_name_nonblank	3819	3819	PASS	Check constraint 'ck_test_runs_name_nonblank' is violated.
+58	CHECK ck_test_runs_status	3819	3819	PASS	Check constraint 'ck_test_runs_status' is violated.
+59	CHECK ck_runs_ended_at	3819	3819	PASS	Check constraint 'ck_runs_ended_at' is violated.
+60	FK test_run_cases.test_run_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_run_cases`, CONSTRAINT `fk_test_run_cases_test_run_id` FOREIGN KEY (`test_run_id`) REFERENCES `test_runs` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+61	FK test_run_cases.test_case_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_run_cases`, CONSTRAINT `fk_test_run_cases_test_case_id` FOREIGN KEY (`test_case_id`) REFERENCES `test_cases` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+62	CHECK ck_test_run_cases_snapshot_title_nonblank	3819	3819	PASS	Check constraint 'ck_test_run_cases_snapshot_title_nonblank' is violated.
+63	CHECK ck_test_run_cases_snapshot_priority	3819	3819	PASS	Check constraint 'ck_test_run_cases_snapshot_priority' is violated.
+64	FK test_run_case_steps.test_run_case_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_run_case_steps`, CONSTRAINT `fk_test_run_case_steps_test_run_case_id` FOREIGN KEY (`test_run_case_id`) REFERENCES `test_run_cases` (`id`) ON DELETE RESTRICT )
+65	CHECK ck_test_run_case_steps_step_order	3819	3819	PASS	Check constraint 'ck_test_run_case_steps_step_order' is violated.
+66	CHECK ck_test_run_case_steps_action_nonblank	3819	3819	PASS	Check constraint 'ck_test_run_case_steps_action_nonblank' is violated.
+67	CHECK ck_test_run_case_steps_expected_result_nonblank	3819	3819	PASS	Check constraint 'ck_test_run_case_steps_expected_result_nonblank' is violated.
+68	FK test_imports.test_run_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_imports`, CONSTRAINT `fk_test_imports_test_run_id` FOREIGN KEY (`test_run_id`) REFERENCES `test_runs` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+69	FK test_imports.imported_by	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_imports`, CONSTRAINT `fk_test_imports_imported_by` FOREIGN KEY (`imported_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+70	CHECK ck_test_imports_source_namespace_nonblank	3819	3819	PASS	Check constraint 'ck_test_imports_source_namespace_nonblank' is violated.
+71	CHECK ck_test_imports_original_filename_nonblank	3819	3819	PASS	Check constraint 'ck_test_imports_original_filename_nonblank' is violated.
+72	FK test_attempts.test_run_case_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempts`, CONSTRAINT `fk_test_attempts_test_run_case_id` FOREIGN KEY (`test_run_case_id`) REFERENCES `test_run_cases` (`id`) ON DELETE RESTRICT ON UPDATE RE)
+73	FK test_attempts.executed_by	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempts`, CONSTRAINT `fk_test_attempts_executed_by` FOREIGN KEY (`executed_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+74	FK test_attempts.import_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempts`, CONSTRAINT `fk_test_attempts_import_id` FOREIGN KEY (`import_id`) REFERENCES `test_imports` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+75	FK test_attempts.automation_mapping_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempts`, CONSTRAINT `fk_test_attempts_automation_mapping_id` FOREIGN KEY (`automation_mapping_id`) REFERENCES `test_automation_mappings` (`id`) ON DELETE R)
+76	CHECK ck_test_attempts_attempt_no	3819	3819	PASS	Check constraint 'ck_test_attempts_attempt_no' is violated.
+77	CHECK ck_test_attempts_status	3819	3819	PASS	Check constraint 'ck_test_attempts_status' is violated.
+78	CHECK ck_attempts_failure_message	3819	3819	PASS	Check constraint 'ck_attempts_failure_message' is violated.
+79	CHECK ck_attempts_source_shape	3819	3819	PASS	Check constraint 'ck_attempts_source_shape' is violated.
+80	FK defects.project_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`defects`, CONSTRAINT `fk_defects_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+81	FK defects.reporter_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`defects`, CONSTRAINT `fk_defects_reporter_id` FOREIGN KEY (`reporter_id`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+82	FK defects.assignee_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`defects`, CONSTRAINT `fk_defects_assignee_id` FOREIGN KEY (`assignee_id`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+83	CHECK ck_defects_key_no	3819	3819	PASS	Check constraint 'ck_defects_key_no' is violated.
+84	CHECK ck_defects_title_nonblank	3819	3819	PASS	Check constraint 'ck_defects_title_nonblank' is violated.
+85	CHECK ck_defects_severity	3819	3819	PASS	Check constraint 'ck_defects_severity' is violated.
+86	CHECK ck_defects_priority	3819	3819	PASS	Check constraint 'ck_defects_priority' is violated.
+87	CHECK ck_defects_status	3819	3819	PASS	Check constraint 'ck_defects_status' is violated.
+88	CHECK ck_defects_resolution_note	3819	3819	PASS	Check constraint 'ck_defects_resolution_note' is violated.
+89	FK test_attempt_defects.attempt_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempt_defects`, CONSTRAINT `fk_test_attempt_defects_attempt_id` FOREIGN KEY (`attempt_id`) REFERENCES `test_attempts` (`id`) ON DELETE RESTRICT ON UPDATE R)
+90	FK test_attempt_defects.defect_id	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempt_defects`, CONSTRAINT `fk_test_attempt_defects_defect_id` FOREIGN KEY (`defect_id`) REFERENCES `defects` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+91	FK test_attempt_defects.linked_by	1452	1452	PASS	Cannot add or update a child row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempt_defects`, CONSTRAINT `fk_test_attempt_defects_linked_by` FOREIGN KEY (`linked_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+92	UNIQUE uq_users_username	1062	1062	PASS	Duplicate entry 'qa_admin' for key 'users.uq_users_username'
+93	UNIQUE uq_projects_key	1062	1062	PASS	Duplicate entry 'QA1' for key 'projects.uq_projects_key'
+94	UNIQUE uq_requirements_project_key	1062	1062	PASS	Duplicate entry '1-1' for key 'requirements.uq_requirements_project_key'
+95	UNIQUE uq_test_cases_project_key	1062	1062	PASS	Duplicate entry '1-1' for key 'test_cases.uq_test_cases_project_key'
+96	UNIQUE uq_automation_identity	1062	1062	PASS	Duplicate entry '1-JUNIT-web-v1|12:qa.LoginTest|16:test_valid_login' for key 'test_automation_identities.uq_automation_identity'
+97	UNIQUE uq_automation_mapping_identity	1062	1062	PASS	Duplicate entry '101' for key 'test_automation_mappings.uq_automation_mapping_identity'
+98	UNIQUE uq_test_plans_project_key	1062	1062	PASS	Duplicate entry '1-1' for key 'test_plans.uq_test_plans_project_key'
+99	UNIQUE uq_run_cases_run_case	1062	1062	PASS	Duplicate entry '101-101' for key 'test_run_cases.uq_run_cases_run_case'
+100	UNIQUE uq_imports_request	1062	1062	PASS	Duplicate entry '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x87\x05' for key 'test_imports.uq_imports_request'
+101	UNIQUE uq_attempts_run_case_no	1062	1062	PASS	Duplicate entry '101-1' for key 'test_attempts.uq_attempts_run_case_no'
+102	UNIQUE uq_attempts_submission	1062	1062	PASS	Duplicate entry '\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x0D\xA5' for key 'test_attempts.uq_attempts_submission'
+103	UNIQUE uq_attempts_import_run_case	1062	1062	PASS	Duplicate entry '101-101' for key 'test_attempts.uq_attempts_import_run_case'
+104	UNIQUE uq_defects_project_key	1062	1062	PASS	Duplicate entry '1-1' for key 'defects.uq_defects_project_key'
+105	DELETE RESTRICT users	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`projects`, CONSTRAINT `fk_projects_created_by` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+106	UPDATE RESTRICT users	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`projects`, CONSTRAINT `fk_projects_created_by` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+107	DELETE RESTRICT projects	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`defects`, CONSTRAINT `fk_defects_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+108	UPDATE RESTRICT projects	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`defects`, CONSTRAINT `fk_defects_project_id` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+109	DELETE RESTRICT test_automation_identities	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_automation_mappings`, CONSTRAINT `fk_test_automation_mappings_automation_identity_id` FOREIGN KEY (`automation_identity_id`) REFERENCES `test_automation_iden)
+110	UPDATE RESTRICT test_automation_identities	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_automation_mappings`, CONSTRAINT `fk_test_automation_mappings_automation_identity_id` FOREIGN KEY (`automation_identity_id`) REFERENCES `test_automation_iden)
+111	DELETE RESTRICT test_cases	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_automation_mappings`, CONSTRAINT `fk_test_automation_mappings_test_case_id` FOREIGN KEY (`test_case_id`) REFERENCES `test_cases` (`id`) ON DELETE RESTRICT ON)
+112	UPDATE RESTRICT test_cases	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_automation_mappings`, CONSTRAINT `fk_test_automation_mappings_test_case_id` FOREIGN KEY (`test_case_id`) REFERENCES `test_cases` (`id`) ON DELETE RESTRICT ON)
+113	DELETE RESTRICT requirements	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_case_requirements`, CONSTRAINT `fk_test_case_requirements_requirement_id` FOREIGN KEY (`requirement_id`) REFERENCES `requirements` (`id`) ON DELETE RESTRICT )
+114	UPDATE RESTRICT requirements	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_case_requirements`, CONSTRAINT `fk_test_case_requirements_requirement_id` FOREIGN KEY (`requirement_id`) REFERENCES `requirements` (`id`) ON DELETE RESTRICT )
+115	DELETE RESTRICT test_plans	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_plan_cases`, CONSTRAINT `fk_test_plan_cases_test_plan_id` FOREIGN KEY (`test_plan_id`) REFERENCES `test_plans` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+116	UPDATE RESTRICT test_plans	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_plan_cases`, CONSTRAINT `fk_test_plan_cases_test_plan_id` FOREIGN KEY (`test_plan_id`) REFERENCES `test_plans` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+117	DELETE RESTRICT test_runs	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_imports`, CONSTRAINT `fk_test_imports_test_run_id` FOREIGN KEY (`test_run_id`) REFERENCES `test_runs` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+118	UPDATE RESTRICT test_runs	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_imports`, CONSTRAINT `fk_test_imports_test_run_id` FOREIGN KEY (`test_run_id`) REFERENCES `test_runs` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+119	DELETE RESTRICT test_run_cases	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempts`, CONSTRAINT `fk_test_attempts_test_run_case_id` FOREIGN KEY (`test_run_case_id`) REFERENCES `test_run_cases` (`id`) ON DELETE RESTRICT ON UPDATE RE)
+120	UPDATE RESTRICT test_run_cases	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempts`, CONSTRAINT `fk_test_attempts_test_run_case_id` FOREIGN KEY (`test_run_case_id`) REFERENCES `test_run_cases` (`id`) ON DELETE RESTRICT ON UPDATE RE)
+121	DELETE RESTRICT test_imports	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempts`, CONSTRAINT `fk_test_attempts_import_id` FOREIGN KEY (`import_id`) REFERENCES `test_imports` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+122	UPDATE RESTRICT test_imports	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempts`, CONSTRAINT `fk_test_attempts_import_id` FOREIGN KEY (`import_id`) REFERENCES `test_imports` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+123	DELETE RESTRICT test_automation_mappings	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempts`, CONSTRAINT `fk_test_attempts_automation_mapping_id` FOREIGN KEY (`automation_mapping_id`) REFERENCES `test_automation_mappings` (`id`) ON DELETE R)
+124	UPDATE RESTRICT test_automation_mappings	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempts`, CONSTRAINT `fk_test_attempts_automation_mapping_id` FOREIGN KEY (`automation_mapping_id`) REFERENCES `test_automation_mappings` (`id`) ON DELETE R)
+125	DELETE RESTRICT test_attempts	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempt_defects`, CONSTRAINT `fk_test_attempt_defects_attempt_id` FOREIGN KEY (`attempt_id`) REFERENCES `test_attempts` (`id`) ON DELETE RESTRICT ON UPDATE R)
+126	UPDATE RESTRICT test_attempts	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempt_defects`, CONSTRAINT `fk_test_attempt_defects_attempt_id` FOREIGN KEY (`attempt_id`) REFERENCES `test_attempts` (`id`) ON DELETE RESTRICT ON UPDATE R)
+127	DELETE RESTRICT defects	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempt_defects`, CONSTRAINT `fk_test_attempt_defects_defect_id` FOREIGN KEY (`defect_id`) REFERENCES `defects` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+128	UPDATE RESTRICT defects	1451	1451	PASS	Cannot delete or update a parent row: a foreign key constraint fails (`qatrack_v1_verify_freeze10`.`test_attempt_defects`, CONSTRAINT `fk_test_attempt_defects_defect_id` FOREIGN KEY (`defect_id`) REFERENCES `defects` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+129	Run requires project	1048	1048	PASS	Column 'project_id' cannot be null
+130	Planless Run permitted	0	0	PASS	
+131	Completed Run requires ended_at	3819	3819	PASS	Check constraint 'ck_runs_ended_at' is violated.
+132	Identity overlength rejected	1406	1406	PASS	Data too long for column 'external_key' at row 1
+133	Same business number across projects	0	0	PASS	
+134	Same external identity across projects	0	0	PASS	
+135	Identity is case sensitive	0	0	PASS	
+136	Manual attempts allow NULL import	0	0	PASS	
+137	SKIPPED accepted	0	0	PASS	
+138	NOT_RUN not an Attempt	3819	3819	PASS	Check constraint 'ck_test_attempts_status' is violated.
+139	Service invariant: Requirement-Case same project	0	0	PASS	
+140	Service invariant: Plan-Case same project	0	0	PASS	
+141	Service invariant: Run-Plan same project	0	0	PASS	
+142	Service invariant: RunCase-Case same project	0	0	PASS	
+143	Service invariant: Identity-Case same project	0	0	PASS	
+144	Service invariant: Attempt-Import same Run	0	0	PASS	
+145	Service invariant: Attempt-Mapping same Case	0	0	PASS	
+146	Service invariant: Attempt-Defect same project	0	0	PASS	
+147	Service invariant: Import namespace matches identity	0	0	PASS	
+148	Service invariant: historical snapshot immutable	0	0	PASS	
+149	Service invariant: Attempt immutable	0	0	PASS	
+150	Service invariant: completed Run rejects new Attempt	0	0	PASS	
+151	Service invariant: only FAIL links defect	0	0	PASS	
+152	Service invariant: assignee project role	0	0	PASS	
+153	Identity preserves trailing space	0	0	PASS	
+154	Service invariant: used mapping cannot rebind	0	0	PASS	
+155	seed count users	0	0	PASS	expected=10, actual=10
+156	seed count projects	0	0	PASS	expected=10, actual=10
+157	seed count project_members	0	0	PASS	expected=20, actual=20
+158	seed count project_counters	0	0	PASS	expected=40, actual=40
+159	seed count requirements	0	0	PASS	expected=30, actual=30
+160	seed count test_cases	0	0	PASS	expected=40, actual=40
+161	seed count test_automation_identities	0	0	PASS	expected=30, actual=30
+162	seed count test_automation_mappings	0	0	PASS	expected=30, actual=30
+163	seed count test_steps	0	0	PASS	expected=80, actual=80
+164	seed count test_case_requirements	0	0	PASS	expected=40, actual=40
+165	seed count test_plans	0	0	PASS	expected=20, actual=20
+166	seed count test_plan_cases	0	0	PASS	expected=50, actual=50
+167	seed count test_runs	0	0	PASS	expected=30, actual=30
+168	seed count test_run_cases	0	0	PASS	expected=50, actual=50
+169	seed count test_run_case_steps	0	0	PASS	expected=100, actual=100
+170	seed count test_imports	0	0	PASS	expected=20, actual=20
+171	seed count test_attempts	0	0	PASS	expected=50, actual=50
+172	seed count defects	0	0	PASS	expected=20, actual=20
+173	seed count test_attempt_defects	0	0	PASS	expected=10, actual=10
+174	FAIL then PASS history	0	0	PASS	expected=2, actual=2
+175	FAIL evidence retained	0	0	PASS	expected=1, actual=1
+176	Latest attempt is PASS	0	0	PASS	expected=1, actual=1
+177	NOT_RUN is absent Attempt	0	0	PASS	expected=0, actual=0
+178	All SKIPPED Run is completed	0	0	PASS	expected=1, actual=1
+total_tests	passed	failed
+178	178	0
